@@ -21,9 +21,14 @@ export default {
 		try{
 			const formData = await request.formData();
 			const file = formData.get("file");
-			const token = formData.get("token");
+			const token = String(formData.get("token") || "").trim();
+
 			if(!file){
 				return new Response(JSON.stringify({error: "No file recieved"}),{status: 400, headers});
+			}
+
+			if(!token){
+				return new Response(JSON.stringify({error: "No token entered"}), {status: 401, headers});
 			}
 
 			const buf = await file.arrayBuffer();

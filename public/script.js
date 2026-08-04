@@ -11,7 +11,8 @@ function updateStatus(msg){
 
 uploadButton.addEventListener('click', async function(){
     const file = fileInput.files[0];
-    if(!inputToken.value){
+    
+    if(!inputToken.value.trim()){
         updateStatus("Enter your token.");
         return;
     }
@@ -21,7 +22,7 @@ uploadButton.addEventListener('click', async function(){
     }
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("token", inputToken.value);
+    formData.append("token", inputToken.value.trim());
     updateStatus("Uploading...");
     uploadButton.disabled = true;
     try{
