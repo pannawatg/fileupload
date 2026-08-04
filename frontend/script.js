@@ -1,3 +1,4 @@
+const URL = "laterbro"
 const uploadForm = document.getElementById('uploadForm');
 const inputFile = document.getElementById('inputFile');
 const statusText = document.getElementById('status');
@@ -13,7 +14,7 @@ uploadForm.addEventListener('submit', async (e) => {
   const formData = new FormData();
   formData.append('file', file);
   try {
-    const response = await fetch('http://localhost:5000/api/upload', {
+    const response = await fetch(`${URL}/upload`, {
       method: 'POST',
       body: formData,
     });
