@@ -1,28 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub File Storage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-  <form id="uploadForm">
-    <!--Token-->
-    <input 
-      type="password" 
-      id="githubToken" 
-      placeholder="Paste GitHub Token here..." 
-      autocomplete="off" 
-      spellcheck="false" 
-      required 
-    />
-    <br><br>    
-    <!--File Input-->
-    <input type="file" id="inputFile" name="myfile" required />
-    <button type="submit">Upload</button>
-  </form>
-  
-  <p id="status"></p>
-  <script src="script.js"></script>
+    <input type="file" id="fileInput" accept=".mp3">
+    <button id="UploadButton">Upload</button>
+    <div id="status"></div>
 </body>
 </html>
