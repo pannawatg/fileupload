@@ -7,9 +7,21 @@
 </head>
 <body>
   <form id="uploadForm">
-    <input type="file" id="inputFile" name="myfile" required>
+    <!--Token-->
+    <input 
+      type="password" 
+      id="githubToken" 
+      placeholder="Paste GitHub Token here..." 
+      autocomplete="off" 
+      spellcheck="false" 
+      required 
+    />
+    <br><br>    
+    <!--File Input-->
+    <input type="file" id="inputFile" name="myfile" required />
     <button type="submit">Upload</button>
   </form>
+  
   <p id="status"></p>
   <script src="script.js"></script>
 </body>
