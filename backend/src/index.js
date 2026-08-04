@@ -10,7 +10,7 @@
 const allowedOrigin = "https://pannawatg.github.io";
 
 export default {
-	async fetch(request, env) {
+	async fetch(request) {
 		const headers = {
 			"Access-Control-Allow-Origin": allowedOrigin,
 			"Content-Type": "application/json",
@@ -21,6 +21,7 @@ export default {
 		try{
 			const formData = await request.formData();
 			const file = formData.get("file");
+			const token = formData.get("token");
 			if(!file){
 				return new Response(JSON.stringify({error: "No file recieved"}),{status: 400, headers});
 			}
@@ -35,7 +36,7 @@ export default {
 					method: "PUT",
 					headers: {
 						"Accept": "application/vnd.github+json",
-						"Authorization": `Bearer ${env.GITHUB_TOKEN}`,
+						"Authorization": `Bearer ${token}`,
 						"X-GitHub-Api-Version": "2026-03-10",
 						"User-Agent": "fileupload-worker",
 						"Content-Type": "application/json",
