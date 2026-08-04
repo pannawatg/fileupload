@@ -2,6 +2,8 @@ const fileInput = document.getElementById("fileInput");
 const uploadButton = document.getElementById("UploadButton");
 const statusElement = document.getElementById("status");
 
+const workerURL = "fileupload-backend.nathapol971.workers.dev";
+
 function updateStatus(msg){
     statusElement.textContent = msg;
 }
@@ -12,10 +14,21 @@ uploadButton.addEventListener('click', function(){
         updateStatus("Please select a file.");
         return;
     }
-    updateStatus(
-        `Success!
-        Name: ${file.name}
-        Size: ${(file.size / 1024 / 1024).toFixed(3)} MB
-        Type: ${file.type || "Unknown"}`
-    );
+    const formData = new FormData();
+    formData.append("file", file);
+    updateStatus("Uploading...");
+    uploadButton.disabled = true;
+    try{
+        const response = await fetch(workerURL, {
+            method: "POST",
+            body: formData,
+        })
+        const result = await response.json();
+        if(!response.ok) throw new Error(result.error);
+        updateStatus(`Recieved: ${result.name}, ${(result.size / 1024 / 1024).toFixed(3)} MB, ${result.type}`);
+    }catch(error){
+        updateStatus(`Error: ${error.message}`);
+    }finally{
+        uploadButton.disabled = false;
+    }
 });
