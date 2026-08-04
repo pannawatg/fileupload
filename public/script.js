@@ -2,13 +2,13 @@ const fileInput = document.getElementById("fileInput");
 const uploadButton = document.getElementById("UploadButton");
 const statusElement = document.getElementById("status");
 
-const workerURL = "fileupload-backend.nathapol971.workers.dev";
+const workerURL = "https://fileupload-backend.nathapol971.workers.dev";
 
 function updateStatus(msg){
     statusElement.textContent = msg;
 }
 
-uploadButton.addEventListener('click', function(){
+uploadButton.addEventListener('click', async function(){
     const file = fileInput.files[0];
     if(!file){
         updateStatus("Please select a file.");
