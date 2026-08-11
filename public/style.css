@@ -26,7 +26,7 @@
     }
     .brd {
         margin: 20px auto;
-        border: 1px solid black;
+        border: 0.125em solid black;
         padding: 10px;
         text-align:left;
         white-space:pre;
