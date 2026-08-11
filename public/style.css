@@ -1,3 +1,53 @@
-#status{
-    white-space: pre-line;
-}
+@import url('https://fonts.cdnfonts.com/css/verily-serif-mono');
+    html {
+        background: darkslategrey;
+        color: white;
+        font-family:'Verily Serif Mono', monospace;
+        text-align: center;
+        padding:2rem;
+        font-size:16px;
+    }
+    #head {
+        margin: 1rem;
+        text-align:center;
+        border:0.25em dashed white;
+        line-height:initial;
+        font-size:initial;
+        white-space:pre;
+    }
+    .nav {
+        margin: 10px 0;
+    }
+    .brd {
+        margin: 20px auto;
+        border: 1px solid white;
+        padding: 10px;
+        text-align:left;
+        white-space:pre;
+    }
+    .foot {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    a:hover {
+      color:lavender;
+    }
+    a {
+      color:white;
+    }
+    .art{
+      font-weight: bold;
+      text-align: left;
+      line-height:1.1rem;
+      font-size:0.9rem;
+    }
+    #bigtext{
+      font-size:1rem;
+      line-height:1rem;
+      white-space:pre;
+    }
+    .text{
+      text-align:justify;
+      text-indent:8em;
+      font:monospace;
+    }
