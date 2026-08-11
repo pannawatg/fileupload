@@ -10,7 +10,7 @@
     #head {
         margin: 1rem;
         text-align:center;
-        border:0.25em dashed white;
+        border:0.25em dashed black;
         line-height:initial;
         font-size:initial;
         white-space:pre;
@@ -26,7 +26,7 @@
     }
     .brd {
         margin: 20px auto;
-        border: 1px solid white;
+        border: 1px solid black;
         padding: 10px;
         text-align:left;
         white-space:pre;
