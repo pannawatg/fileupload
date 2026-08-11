@@ -52,6 +52,11 @@
       line-height:1rem;
       white-space:pre;
     }
+    #UploadButton {
+        background:#FF009D;
+        color:white;
+        border:0.125em dotted white;
+    }
     .text{
       text-align:justify;
       text-indent:8em;
